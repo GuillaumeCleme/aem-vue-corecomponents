@@ -115,12 +115,6 @@
     <dependencies>
         <dependency>
             <groupId>me.guillaumecle.aem</groupId>
-            <artifactId>vuecore.core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>me.guillaumecle.aem</groupId>
             <artifactId>vuecore.ui.frontend</artifactId>
             <version>${project.version}</version>
             <type>zip</type>

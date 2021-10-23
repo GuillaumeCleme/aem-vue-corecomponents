@@ -62,20 +62,9 @@
                         </embedded>
                         <embedded>
                             <groupId>me.guillaumecle.aem</groupId>
-                            <artifactId>vuecore.core</artifactId>
-                            <target>/apps/vuecore-packages/application/install</target>
-                        </embedded>
-                        <embedded>
-                            <groupId>me.guillaumecle.aem</groupId>
-                            <artifactId>vuecore.ui.content</artifactId>
+                            <artifactId>vuecore.ui.samples</artifactId>
                             <type>zip</type>
                             <target>/apps/vuecore-packages/content/install</target>
-                        </embedded>
-                        <embedded>
-                            <groupId>me.guillaumecle.aem</groupId>
-                            <artifactId>vuecore.ui.config</artifactId>
-                            <type>zip</type>
-                            <target>/apps/vuecore-packages/application/install</target>
                         </embedded>
                         <embedded>
                             <groupId>com.adobe.cq</groupId>
@@ -191,13 +180,7 @@
         </dependency>
         <dependency>
             <groupId>me.guillaumecle.aem</groupId>
-            <artifactId>vuecore.ui.content</artifactId>
-            <version>${project.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>me.guillaumecle.aem</groupId>
-            <artifactId>vuecore.ui.config</artifactId>
+            <artifactId>vuecore.ui.samples</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
