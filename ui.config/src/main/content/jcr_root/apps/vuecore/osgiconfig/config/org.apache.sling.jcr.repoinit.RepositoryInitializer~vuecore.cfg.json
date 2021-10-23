@@ -1,0 +1,10 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/vuecore",
+        "create path (nt:unstructured) /content/dam/vuecore/jcr:content",
+        "set properties on /content/dam/vuecore/jcr:content",
+        "set cq:conf{String} to /conf/vuecore",
+        "set jcr:title{String} to \"AEM Core Vue Core Components\"",
+        "end"
+    ]
+}

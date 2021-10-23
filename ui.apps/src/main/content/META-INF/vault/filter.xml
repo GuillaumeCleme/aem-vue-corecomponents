@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/vuecore/clientlibs"/>
+    <filter root="/apps/vuecore/components"/>
+    <filter root="/apps/vuecore/i18n"/>
+</workspaceFilter>
