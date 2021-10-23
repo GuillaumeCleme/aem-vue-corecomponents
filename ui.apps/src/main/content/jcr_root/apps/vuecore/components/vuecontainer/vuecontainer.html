@@ -37,7 +37,9 @@
     ></sly>
 
     <script data-vue-container="${container.id}_app" data-sly-test="${wcmmode.disabled}">
-        window.vuecore.app = Vue.createApp({});
+		const main = window.vuecore.main || {};
+
+        window.vuecore.app = Vue.createApp(main);
 
         //Component Registration
         window.vuecore.components.forEach((value, key) => {

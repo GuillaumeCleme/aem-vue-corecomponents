@@ -1,2 +1,4 @@
-window.vuecore = window.vuecore || {};
-window.vuecore.components = new Map();
+window.vuecore = window.vuecore || {
+    main: {},
+    components: new Map(),
+};
