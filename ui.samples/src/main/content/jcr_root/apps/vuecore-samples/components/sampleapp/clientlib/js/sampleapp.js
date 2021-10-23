@@ -1,7 +1,8 @@
 window.vuecore.main = {
   data() {
     return {
-      message: "",
+      message: "Button Clicks: ",
+      noClicks: 0,
     }
   },
 };
