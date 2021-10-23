@@ -103,7 +103,7 @@ module.exports = {
             filename: 'clientlib-[name]/[name].css'
         }),
         new CopyWebpackPlugin([
-            { from: path.resolve(__dirname + '/node_modules/vue/dist/vue.min.js'), to: './clientlib-vuecore/' }
+            { from: path.resolve(__dirname + '/node_modules/vue/dist/vue.global.prod.js'), to: './clientlib-vuecore/' }
         ])
     ],
     stats: {
