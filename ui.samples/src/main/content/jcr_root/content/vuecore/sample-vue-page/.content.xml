@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2021-10-23T09:54:14.113-07:00"
+        cq:lastModified="{Date}2021-10-23T11:19:27.220-07:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/vuecore/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
@@ -22,7 +22,30 @@
                 <container
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="vuecore/components/container"
-                    layout="responsiveGrid"/>
+                    layout="responsiveGrid">
+                    <sampleapp
+                        jcr:created="{Date}2021-10-23T10:55:52.319-07:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-10-23T10:55:52.319-07:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vuecore-samples/components/sampleapp">
+                        <samplebutton
+                            jcr:created="{Date}2021-10-23T10:55:56.189-07:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2021-10-23T10:55:56.189-07:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vuecore-samples/components/samplebutton"/>
+                        <sampleconsole
+                            jcr:created="{Date}2021-10-23T11:19:27.215-07:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2021-10-23T11:19:27.215-07:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vuecore-samples/components/sampleconsole"/>
+                    </sampleapp>
+                </container>
             </container>
         </root>
     </jcr:content>
