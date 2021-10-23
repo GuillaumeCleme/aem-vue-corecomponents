@@ -47,9 +47,6 @@
                         <!-- Immutable context-aware configurations -->
                         <filter><root>/apps/settings</root></filter>
 
-                        <!-- DAM folder root, will be created via repoinit -->
-                        <filter><root>/content/dam/vuecore</root></filter>
-
                     </filters>
                 </configuration>
             </plugin>
