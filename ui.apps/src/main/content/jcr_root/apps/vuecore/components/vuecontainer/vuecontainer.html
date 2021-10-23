@@ -1,0 +1,30 @@
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.js @ categories='vuecore.vue'}">
+</sly>
+<sly data-sly-use.container="com.adobe.cq.wcm.core.components.models.LayoutContainer">
+    <div id="${container.id}_app">
+        <sly data-sly-test.responsive="${container.layout == 'RESPONSIVE_GRID'}"
+            data-sly-use.responsiveGridTemplate="responsiveGrid.html"
+            data-sly-call="${responsiveGridTemplate.responsiveGrid @ container=container}"></sly>
+        <sly data-sly-test.simple="${!responsive}" data-sly-use.simpleTemplate="simple.html"
+            data-sly-call="${simpleTemplate.simple @ container=container}"></sly>
+    </div>
+
+    <!-- Load all Vue Templates -->
+    <sly 
+        data-sly-test="${wcmmode.disabled}"
+        data-sly-repeat="${container.items}"
+        data-sly-resource="${item.path @ selectors='template'}"
+    ></sly>
+
+    <script data-vue-container="${container.id}_app" data-sly-test="${wcmmode.disabled}">
+        window.vuecore.app = Vue.createApp({});
+
+        //Component Registration
+        window.vuecore.components.forEach((value, key) => {
+            window.vuecore.app.component(key, value);
+        });
+
+        window.vuecore.app.mount("#" + document.currentScript.getAttribute("data-vue-container"));
+    </script>
+</sly>
