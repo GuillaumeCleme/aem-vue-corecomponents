@@ -13,17 +13,22 @@ const resolve = {
     extensions: ['.js', '.ts'],
     plugins: [new TSConfigPathsPlugin({
         configFile: './tsconfig.json'
-    })]
+    })],
+    modules: [
+        path.resolve(__dirname),
+        path.resolve(__dirname + '/node_modules'),
+    ]
 };
 
 module.exports = {
     resolve: resolve,
     entry: {
-        site: SOURCE_ROOT + '/site/main.ts'
+        vuecore: SOURCE_ROOT + '/vuecore/main.ts'
     },
     output: {
         filename: (chunkData) => {
-            return chunkData.chunk.name === 'dependencies' ? 'clientlib-dependencies/[name].js' : 'clientlib-site/[name].js';
+            var chunkName = chunkData.chunk.name;
+            return 'clientlib-' + chunkName + '/[name].js';
         },
         path: path.resolve(__dirname, 'dist')
     },
@@ -98,7 +103,7 @@ module.exports = {
             filename: 'clientlib-[name]/[name].css'
         }),
         new CopyWebpackPlugin([
-            { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' }
+            { from: path.resolve(__dirname + '/node_modules/vue/dist/vue.global.prod.js'), to: './clientlib-vuecore/' }
         ])
     ],
     stats: {
