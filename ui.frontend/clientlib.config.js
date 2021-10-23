@@ -63,29 +63,15 @@ module.exports = {
     },
     {
       ...libsBaseConfig,
-      name: 'clientlib-site',
-      categories: ['vuecore.site'],
-      dependencies: ['vuecore.dependencies'],
+      name: 'clientlib-vue',
+      categories: ['vuecore.vue'],
       assets: {
         // Copy entrypoint scripts and stylesheets into the respective ClientLib
         // directories
         js: {
-          cwd: 'clientlib-site',
+          cwd: 'clientlib-vue',
           files: ['**/*.js'],
           flatten: false
-        },
-        css: {
-          cwd: 'clientlib-site',
-          files: ['**/*.css'],
-          flatten: false
-        },
-
-        // Copy all other files into the `resources` ClientLib directory
-        resources: {
-          cwd: 'clientlib-site',
-          files: ['**/*.*'],
-          flatten: false,
-          ignore: ['**/*.js', '**/*.css']
         }
       }
     }

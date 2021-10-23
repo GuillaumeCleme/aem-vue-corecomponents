@@ -52,7 +52,9 @@
     "webpack-dev-server": "^3.9.0",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "vue": "^2.6.14"
+  },
   "browserslist": [
     "last 2 version",
     "> 1%"

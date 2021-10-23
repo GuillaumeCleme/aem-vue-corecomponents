@@ -13,17 +13,22 @@ const resolve = {
     extensions: ['.js', '.ts'],
     plugins: [new TSConfigPathsPlugin({
         configFile: './tsconfig.json'
-    })]
+    })],
+    modules: [
+        path.resolve(__dirname),
+        path.resolve(__dirname + '/node_modules'),
+    ]
 };
 
 module.exports = {
     resolve: resolve,
     entry: {
-        site: SOURCE_ROOT + '/site/main.ts'
+        vue: SOURCE_ROOT + '/vue/main.ts'
     },
     output: {
         filename: (chunkData) => {
-            return chunkData.chunk.name === 'dependencies' ? 'clientlib-dependencies/[name].js' : 'clientlib-site/[name].js';
+            var chunkName = chunkData.chunk.name;
+            return 'clientlib-' + chunkName + '/[name].js';
         },
         path: path.resolve(__dirname, 'dist')
     },
