@@ -3,5 +3,5 @@
     cq:icon="asset"
     jcr:primaryType="cq:Component"
     jcr:title="Sample App Button (Vue)"
-    sling:resourceSuperType="vuecore/components/vuecomponent"
+    sling:resourceSuperType="vuecore/components/vuecomponent/v1/vuecomponent"
     componentGroup="AEM Core Vue Core Components"/>

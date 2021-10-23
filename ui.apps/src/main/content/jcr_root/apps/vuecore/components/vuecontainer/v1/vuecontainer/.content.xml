@@ -3,6 +3,6 @@
     cq:isContainer="true"
     cq:styleElements="[div,section,article,main,aside,header,footer]"
     jcr:primaryType="cq:Component"
-    jcr:title="Sample App Container (Vue)"
-    sling:resourceSuperType="vuecore/components/vuecontainer/v1/vuecontainer"
+    jcr:title="Container (Vue)"
+    sling:resourceSuperType="core/wcm/components/container/v1/container"
     componentGroup="AEM Core Vue Core Components"/>

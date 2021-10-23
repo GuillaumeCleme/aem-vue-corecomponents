@@ -30,7 +30,7 @@ The following component concepts are used and available for overlays:
 2. `cq:design_dialog` - defines the Design Dialog options using AEM defaults
 3. `cq:dialog` - defines the Authoring Dialog options using AEM defaults
 4. `template.html` - defines the Vue component client template
-2. `vuecomponent.html` - defines the Vue component to be rendered and placed within a [Vue Container](https://github.com/GuillaumeCleme/aem-vue-corecomponents/tree/master/ui.apps/src/main/content/jcr_root/apps/vuecore/components/vuecontainer).
+2. `vuecomponent.html` - defines the Vue component to be rendered and placed within a [Vue Container](https://github.com/GuillaumeCleme/aem-vue-corecomponents/tree/master/ui.apps/src/main/content/jcr_root/apps/vuecore/components/vuecontainer/v1/vuecontainer).
 
 ### Edit Dialog Properties
 The following properties are written to JCR for the Vue component and are expected to be available as `Resource` properties:

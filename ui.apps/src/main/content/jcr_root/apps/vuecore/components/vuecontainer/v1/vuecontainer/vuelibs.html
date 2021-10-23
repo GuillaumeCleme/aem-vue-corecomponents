@@ -1,5 +1,5 @@
 <!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  ~ Vue global component template 
+  ~ Include core Vue libraries
   ~
   ~ Copyright 2021 Guillaume Clement
   ~
@@ -15,11 +15,6 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
-<script type="text/x-template" data-sly-attribute.id="${resource.name @ context='text'}" data-sly-unwrap="${!wcmmode.disabled}">
-	<!-- Add Vue template content here -->
-    <div />    
-</script>
-
 <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html">
-	<sly data-sly-call="${clientlib.all @ categories='vuecore.vuecomponent'}">
+	<sly data-sly-call="${clientlib.js @ categories='vuecore.vue.v1'}">
 </sly>
