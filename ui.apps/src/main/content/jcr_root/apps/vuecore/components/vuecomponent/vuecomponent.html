@@ -20,3 +20,4 @@
 	data-sly-element="${resource.name @ context='text'}"
 	data-sly-test="${wcmmode.disabled}"
 />
+<sly data-sly-test="${!wcmmode.disabled}" data-sly-resource="${resource @ selectors='template'}"></sly>    
