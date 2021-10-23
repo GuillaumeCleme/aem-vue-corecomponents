@@ -21,7 +21,7 @@
     <groupId>me.guillaumecle.aem</groupId>
     <artifactId>vuecore</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>AEM Core Vue Core Components</name>
     <description>AEM Core Vue Core Components</description>
 
