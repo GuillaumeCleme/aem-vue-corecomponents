@@ -27,14 +27,10 @@
 
     <modules>
         <module>all</module>
-        <module>core</module>
         <module>ui.frontend</module>
         <module>ui.apps</module>
         <module>ui.apps.structure</module>
-        <module>ui.config</module>
         <module>ui.content</module>
-        <module>it.tests</module>
-        <module>dispatcher</module>
         <module>ui.tests</module>
     </modules>
 
@@ -442,41 +438,6 @@ Bundle-DocURL:
             </pluginRepositories>
         </profile>
 
-        <!-- Development profile: install only the bundle -->
-        <profile>
-            <id>autoInstallBundle</id>
-            <!--
-                To enable this feature for a bundle, the sling-maven-plugin
-                (without configuration) needs to be included:
-
-                <plugin>
-                    <groupId>org.apache.sling</groupId>
-                    <artifactId>sling-maven-plugin</artifactId>
-                 </plugin>
-            -->
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.sling</groupId>
-                            <artifactId>sling-maven-plugin</artifactId>
-                            <executions>
-                                <execution>
-                                    <id>install-bundle</id>
-                                    <goals>
-                                        <goal>install</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-
         <profile>
             <id>autoInstallPackage</id>
             <activation>
@@ -564,92 +525,6 @@ Bundle-DocURL:
     <!-- ====================================================================== -->
     <dependencyManagement>
         <dependencies>
-            <!-- OSGi Dependencies -->
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.annotation.versioning</artifactId>
-                <version>1.1.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.annotation.bundle</artifactId>
-                <version>1.0.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.service.metatype.annotations</artifactId>
-                <version>1.4.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.service.component.annotations</artifactId>
-                <version>1.4.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.service.component</artifactId>
-                <version>1.4.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.service.cm</artifactId>
-                <version>1.6.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.service.event</artifactId>
-                <version>1.3.1</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.service.log</artifactId>
-                <version>1.4.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.resource</artifactId>
-                <version>1.0.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.framework</artifactId>
-                <version>1.9.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.util.tracker</artifactId>
-                <version>1.5.1</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.sling</groupId>
-                <artifactId>org.apache.sling.servlets.annotations</artifactId>
-                <version>1.2.4</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- Logging Dependencies -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.21</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-simple</artifactId>
-                <version>1.7.25</version>
-                <scope>test</scope>
-            </dependency>
             <!-- Adobe AEM Dependencies -->
             <dependency>
                 <groupId>com.adobe.aem</groupId>
@@ -663,33 +538,6 @@ Bundle-DocURL:
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.models.api</artifactId>
                 <version>1.3.6</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- Servlet API -->
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>javax.servlet.jsp</groupId>
-                <artifactId>jsp-api</artifactId>
-                <version>2.1</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>javax.annotation</groupId>
-                <artifactId>javax.annotation-api</artifactId>
-                <version>1.3.2</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- JCR -->
-            <dependency>
-                <groupId>javax.jcr</groupId>
-                <artifactId>jcr</artifactId>
-                <version>2.0</version>
                 <scope>provided</scope>
             </dependency>
             <!-- Taglibs -->
@@ -715,46 +563,6 @@ Bundle-DocURL:
                 <artifactId>core.wcm.components.config</artifactId>
                 <type>zip</type>
                 <version>${core.wcm.components.version}</version>
-            </dependency>
-
-
-            <!-- Testing -->
-            <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>5.6.2</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>3.3.3</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-junit-jupiter</artifactId>
-                <version>3.3.3</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>junit-addons</groupId>
-                <artifactId>junit-addons</artifactId>
-                <version>1.4</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>io.wcm</groupId>
-                <artifactId>io.wcm.testing.aem-mock.junit5</artifactId>
-                <version>3.0.2</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>uk.org.lidalia</groupId>
-                <artifactId>slf4j-test</artifactId>
-                <version>1.0.1</version>
-                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
