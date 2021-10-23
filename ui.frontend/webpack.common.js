@@ -23,7 +23,7 @@ const resolve = {
 module.exports = {
     resolve: resolve,
     entry: {
-        vue: SOURCE_ROOT + '/vue/main.ts'
+        vuecore: SOURCE_ROOT + '/vuecore/main.ts'
     },
     output: {
         filename: (chunkData) => {
@@ -103,7 +103,7 @@ module.exports = {
             filename: 'clientlib-[name]/[name].css'
         }),
         new CopyWebpackPlugin([
-            { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' }
+            { from: path.resolve(__dirname + '/node_modules/vue/dist/vue.min.js'), to: './clientlib-vuecore/' }
         ])
     ],
     stats: {

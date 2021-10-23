@@ -44,13 +44,13 @@ module.exports = {
   libs: [
     {
       ...libsBaseConfig,
-      name: 'clientlib-vue',
+      name: 'clientlib-vuecore',
       categories: ['vuecore.vue'],
       assets: {
         // Copy entrypoint scripts and stylesheets into the respective ClientLib
         // directories
         js: {
-          cwd: 'clientlib-vue',
+          cwd: 'clientlib-vuecore',
           files: ['**/*.js'],
           flatten: false
         }
