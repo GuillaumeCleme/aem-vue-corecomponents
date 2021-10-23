@@ -115,12 +115,6 @@
     <dependencies>
         <dependency>
             <groupId>me.guillaumecle.aem</groupId>
-            <artifactId>vuecore.core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>me.guillaumecle.aem</groupId>
             <artifactId>vuecore.ui.frontend</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
@@ -154,16 +148,6 @@
             <groupId>com.adobe.aem</groupId>
             <artifactId>uber-jar</artifactId>
             <classifier>apis</classifier>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.jcr</groupId>
-            <artifactId>jcr</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
         </dependency>
 
         <dependency>

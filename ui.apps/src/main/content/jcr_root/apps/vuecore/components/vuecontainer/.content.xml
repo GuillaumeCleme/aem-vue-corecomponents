@@ -5,4 +5,4 @@
     jcr:primaryType="cq:Component"
     jcr:title="Container (Vue)"
     sling:resourceSuperType="core/wcm/components/container/v1/container"
-    componentGroup="Vue Core Components"/>
+    componentGroup="AEM Core Vue Core Components"/>
