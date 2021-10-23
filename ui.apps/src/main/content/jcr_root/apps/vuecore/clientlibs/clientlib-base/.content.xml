@@ -3,4 +3,4 @@
     jcr:primaryType="cq:ClientLibraryFolder"
     allowProxy="{Boolean}true"
     categories="[vuecore.base]"
-    embed="[vuecore.vue,vuecore.grid]"/>
+    embed="[vuecore.vue.v1,vuecore.grid]"/>
