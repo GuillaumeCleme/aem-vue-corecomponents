@@ -52,6 +52,19 @@
         <componentGroupName>AEM Core Vue Core Components</componentGroupName>
     </properties>
 
+    <scm>
+        <connection>scm:git:https://github.com/guillaumecleme/aem-vue-corecomponents</connection>
+    </scm>
+
+    <!-- https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub GuillaumeCleme Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/guillaumecleme/aem-vue-corecomponents</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <!-- Maven Release Plugin -->
