@@ -3,7 +3,7 @@
     jcr:primaryType="nt:unstructured"
     jcr:title="Vue Component"
     sling:resourceType="cq/gui/components/authoring/dialog"
-    helpPath="https://github.com/GuillaumeCleme/aem-vue-corecomponents/tree/master/ui.apps/src/main/content/jcr_root/apps/vuecore/components/vuecomponent">
+    helpPath="https://github.com/GuillaumeCleme/aem-vue-corecomponents/tree/master/ui.apps/src/main/content/jcr_root/apps/vuecore/components/vuecomponent/v1/vuecomponent">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
