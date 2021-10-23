@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
+    <filter root="/apps/vuecore-samples"/>
     <filter root="/conf/vuecore" mode="merge"/>
     <filter root="/content/vuecore" mode="merge"/>
-    <filter root="/content/dam/vuecore/asset.jpg" mode="merge"/>
-    <filter root="/content/experience-fragments/vuecore" mode="merge"/>
 </workspaceFilter>

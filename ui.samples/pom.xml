@@ -52,12 +52,12 @@
                     </properties>
                     <group>me.guillaumecle.aem</group>
                     <name>vuecore.ui.content</name>
-                    <packageType>content</packageType>
+                    <packageType>mixed</packageType>
                     <accessControlHandling>merge</accessControlHandling>
                     <validatorsSettings>
                         <jackrabbit-filter>
                             <options>
-                                <validRoots>/conf,/content</validRoots>
+                                <validRoots>/conf,/content,/apps/vuecore-samples</validRoots>
                             </options>
                         </jackrabbit-filter>
                     </validatorsSettings>
