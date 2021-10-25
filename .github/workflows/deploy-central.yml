@@ -27,10 +27,11 @@ jobs:
           server-id: github
       - name: GPG Version
         run: gpg --version
-      - name: Add GPG Key
-        run: echo $GPG_PRIVATE_KEY | gpg --import
+      - name: Import GPG Key
+        uses: crazy-max/ghaction-import-gpg@v1
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       #- name: Build (Maven)
       #  run: mvn -B package
       #- name: Deploy (Maven)
