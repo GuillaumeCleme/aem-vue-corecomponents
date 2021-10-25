@@ -26,6 +26,6 @@ jobs:
       - name: Build (Maven)
         run: mvn -B package
       - name: Deploy (Maven)
-        run: mvn deploy
+        run: mvn deploy -Pgithub-deploy
         env:
           GITHUB_TOKEN: ${{ github.token }}

@@ -1,0 +1,21 @@
+<settings>
+    <servers>
+        <server>
+            <id>ossrh</id>
+            <username>${env.OSS_JIRA_ID}</username>
+            <password>${env.OSS_JIRA_PWD}</password>
+        </server>
+    </servers>
+    <profiles>
+        <profile>
+          <id>ossrh</id>
+          <activation>
+            <activeByDefault>false</activeByDefault>
+          </activation>
+          <properties>
+            <gpg.executable>gpg</gpg.executable>
+            <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+          </properties>
+        </profile>
+      </profiles>
+</settings>

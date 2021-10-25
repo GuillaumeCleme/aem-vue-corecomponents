@@ -24,6 +24,7 @@
     <version>1.0.0</version>
     <name>AEM Core Vue Core Components</name>
     <description>AEM Core Vue Core Components</description>
+    <url>https://github.com/guillaumecleme/aem-vue-corecomponents</url>
 
     <modules>
         <module>all</module>
@@ -53,17 +54,25 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/guillaumecleme/aem-vue-corecomponents</connection>
+        <connection>scm:git:git://github.com/guillaumecleme/aem-vue-corecomponents.git</connection>
+        <developerConnection>scm:git:ssh://github.com:guillaumecleme/aem-vue-corecomponents.git</developerConnection>
+        <url>https://github.com/guillaumecleme/aem-vue-corecomponents/tree/master</url>
     </scm>
 
-    <!-- https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages -->
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub GuillaumeCleme Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/guillaumecleme/aem-vue-corecomponents</url>
-        </repository>
-    </distributionManagement>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Guillaume Clement</name>
+            <email>guillaumecle.me@gmail.com</email>
+            <url>https://guillaumecle.me</url>
+        </developer>
+    </developers>
 
     <build>
         <plugins>
@@ -119,6 +128,33 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!-- Sources and Javadocs -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                  <execution>
+                    <id>attach-sources</id>
+                    <goals>
+                      <goal>jar-no-fork</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                  <execution>
+                    <id>attach-javadocs</id>
+                    <goals>
+                      <goal>jar</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
         </plugins>
         <pluginManagement>
             <plugins>
@@ -529,6 +565,79 @@ Bundle-DocURL:
                     </plugins>
                 </pluginManagement>
             </build>
+        </profile>
+        <profile>
+            <id>github-deploy</id>
+
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <!-- https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-apache-maven-for-use-with-github-packages -->
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub GuillaumeCleme Apache Maven Packages</name>
+                    <url>https://maven.pkg.github.com/guillaumecleme/aem-vue-corecomponents</url>
+                </repository>
+            </distributionManagement>
+
+
+
+     
+        </profile>
+        <profile>
+            <id>central-deploy</id>
+
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+
+            <build>
+                <plugins>
+                    <!-- Sonatype Deploy -->
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                          <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                              <goal>sign</goal>
+                            </goals>
+                          </execution>
+                        </executions>
+                      </plugin>
+                </plugins>
+            </build>
+
+
+
+     
         </profile>
     </profiles>
 

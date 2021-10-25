@@ -26,16 +26,16 @@ jobs:
           java-version: "11"
           architecture: x64
           server-id: github
-      - name: GPG Version
-        run: gpg --version
       - name: Import GPG Key
         uses: crazy-max/ghaction-import-gpg@v1
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-      #- name: Build (Maven)
-      #  run: mvn -B package
-      #- name: Deploy (Maven)
-      #  run: mvn deploy
-      #  env:
-      #    GITHUB_TOKEN: ${{ github.token }}
+      - name: Build (Maven)
+        run: mvn -B package
+      - name: Deploy (Maven)
+        run: mvn deploy --settings settings.xml -Pcentral-deploy -Possrh
+        env:
+          OSS_JIRA_ID: ${{ secrets.OSS_JIRA_ID }}
+          OSS_JIRA_PWD: ${{ secrets.OSS_JIRA_PWD }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
